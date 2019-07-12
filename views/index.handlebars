@@ -1,0 +1,49 @@
+<div class="jumbotron jumbotron-fluid bg-danger">
+  <div class="container">
+    <h1 class="display-4 text-center">Eat-Da-BURGER!!!</h1>
+    <p class="lead text-center">Nom Nom Nom!</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="http://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4134.png" class="w-100 p-2 pl-5">
+        </div>
+        <div class="col-md-6 pt-5 pl-5">
+            <h2>Add a burger</h2>
+            <form class="create-form">
+
+            <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="name">
+            </div>
+
+            <button type="submit" class="btn btn-warning mt-5">Add burger</button>
+            </form>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Select a burger to DEVOUR:</h2>
+        <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/unless}}
+        {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-md-6">
+        <h2>Devoured Burgers:</h2>
+        <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/if}}
+        {{/each}}
+        </ul>
+    </div>
+</div>

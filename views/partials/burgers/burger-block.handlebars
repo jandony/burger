@@ -1,0 +1,12 @@
+<li>
+	<i class="fas fa-hamburger mr-1"></i>
+    
+    {{burger_name}}
+
+    {{#if devoured}} 
+	    <button class="change-devoured float-right btn btn-warning" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		    DEVOUR BURGER!
+	    </button>
+    {{/if}}
+    <hr class="bg-white">
+</li>
